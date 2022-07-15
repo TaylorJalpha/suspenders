@@ -42,4 +42,8 @@ group :test do
   gem "webmock"
 end
 
+<% if SUSPENDERS_PATH.join("suspenders.gemspec").exist? %>
+gem "suspenders", path: "<%= SUSPENDERS_PATH %>", group: [:development, :test]
+<% else %>
 gem "suspenders", group: [:development, :test]
+<% end %>
